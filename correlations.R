@@ -6,9 +6,7 @@ correlations <- function(data)
   fm <- as.data.frame(as.table(correlation_matrix))
   names(fm) <- c("First.Variable", "Second.Variable","Correlation")
   sorted <- fm[order(abs(fm$Correlation),decreasing=T),]
-  i = 1
-  while(sorted[i,3] != 0){
-    i = i+1
-  }
-  return(sorted[1:i-1,])
+  n <- ncol(data)
+  i <- (n^2 - n)/2 # кол-во эл-тов выше главной диагонали
+  return(sorted[1:i,])
 }
