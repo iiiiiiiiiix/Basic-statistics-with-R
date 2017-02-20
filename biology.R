@@ -51,3 +51,9 @@ fviz_contrib(pc, choice = "var", axes = 1:4)
 # кластерный анализ
 
 frequency_table <- count_(dataset, "species", sort = T)
+
+
+
+
+
+detach(dataset)
